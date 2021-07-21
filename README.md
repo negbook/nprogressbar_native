@@ -17,14 +17,14 @@ functions:
 ```
 CreateProgress(duration,text,cb,font,p1,p2,transparent,color1,color2,color3) 
 ```
-duration : the time progress remain
-text : background text
-cb : callback function
-font : custom font or default font "$Font2"
-p1,p2 : "L","B" / "L","T" / "C","C" / "C","B" / "C","T" / "R","T" / "R","B" or 0.35,0.45
-transparent :  opacity value of colors
-color1 : color of value bar
-color2 : color of trough bar/background 
-color3 : textcolor {255,0,123} or {255,0,0,120}
+duration (number): the time progress remain    
+text (string): background text  
+cb (function): callback function  
+font (string): custom font or default font "$Font2"  
+p1,p2 (string/number): "L","B" / "L","T" / "C","C" / "C","B" / "C","T" / "R","T" / "R","B" or 0.35,0.45  
+transparent (number):  opacity value of colors  
+color1 (table): color of value bar  
+color2 (table): color of trough bar/background   
+color3 (table): textcolor {255,0,123} or {255,0,0,120}  
 
 
