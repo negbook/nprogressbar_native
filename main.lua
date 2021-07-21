@@ -130,6 +130,9 @@ local function CreateProgress(duration,text,cb,font,p1,p2,transparent,color1,col
         if cb then cb(text) end 
         if nowY[sp2] then 
             nowY[sp2] = nowY[sp2] - 1
+            if nowY[sp2] == 0 then 
+                nowY[sp2] = nil
+            end 
         end 
         return 
     end)
