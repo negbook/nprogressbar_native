@@ -71,6 +71,7 @@ local function CreateProgress(duration,text,cb,font,p1,p2,transparent,color1,col
     local width = GetTextWidth(text)/3
     local height = GetRenderedCharacterHeight(size , fontid) 
     local safezone = GetSafeZoneSize()
+   
     p1 = p1 or "C"
     p2 = p2 or "C"
     if p1 ~= "C" then 
@@ -95,6 +96,7 @@ local function CreateProgress(duration,text,cb,font,p1,p2,transparent,color1,col
     else 
             y = safezone/2
     end 
+    local safezone =  safezone - width
     if x > safezone then x = safezone-width/2 end 
     if y > safezone then y = safezone-height/2 end 
     if x < 1-safezone then x = 1-safezone+width/2 end 
