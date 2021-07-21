@@ -109,7 +109,7 @@ local function CreateProgress(duration,text,cb,font,p1,p2,transparent,color1,col
     if y < 1-safezone then y = 1-safezone+height/2 end 
     local sp2 = tostring(p1)..tostring(p2)
     if not nowY[sp2] then nowY[sp2] = 0 end 
-    if tostring(p2) == "T" then 
+    if (type(p2)=='number' and p2 < safezone/2) or tostring(p2) == "T" then 
         if nowY[sp2] then 
             y = y + (nowY[sp2] * (height+ 0.005)*2.0) 
         end  
