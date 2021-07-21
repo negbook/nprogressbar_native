@@ -16,6 +16,7 @@ TriggerEvent('CreateProgress',...)
 functions:
 ```
 CreateProgress(duration,text,cb,font,p1,p2,transparent,color1,color2,color3) 
+```
 duration : the time progress remain
 text : background text
 cb : callback function
@@ -26,4 +27,4 @@ color1 : color of value bar
 color2 : color of trough bar/background 
 color3 : textcolor {255,0,123} or {255,0,0,120}
 
-```
+
