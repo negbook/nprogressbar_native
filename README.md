@@ -1,6 +1,5 @@
 # NProgressbar | drawing progress bar with game base native
 
-
 Install:
 
 #method1:
