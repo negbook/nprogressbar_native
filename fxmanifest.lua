@@ -1,7 +1,7 @@
 fx_version 'adamant'
 games {'gta5'}
 
-description 'Progressbar'
+description 'NProgressbar'
 
 client_scripts {
     'main.lua',
