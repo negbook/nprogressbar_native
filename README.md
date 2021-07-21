@@ -30,7 +30,7 @@ CreateProgress(duration,text,cb,font,p1,p2,transparent,color1,color2,color3)
 duration (number): the time progress remain    
 text (string): background text  
 cb (function): callback function  
-font (string): custom font or default font "$Font2"  
+font (string/number): custom font name or default font "$Font2" or fontid just like SetTextFont(here)  
 p1,p2 (string/number): "L","B" / "L","T" / "C","C" / "C","B" / "C","T" / "R","T" / "R","B" or 0.35,0.45  
 transparent (number):  opacity value of colors 0.0~1.0  
 color1 (table): color of value bar  
