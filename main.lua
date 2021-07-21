@@ -56,6 +56,7 @@ local function DrawProgress(xper,text,size,width,height,fontid,x,y,colorValue,co
         DrawText2D(text,size,x ,y-((height * 1.5)/2)+0.00138888,fontid,colorText)
     end 
 end 
+local nowY = {}
 local function CreateProgress(duration,text,cb,font,p1,p2,transparent,color1,color2,color3)
     local nowTime = GetGameTimer()
     local endTime = nowTime+duration
@@ -98,13 +99,27 @@ local function CreateProgress(duration,text,cb,font,p1,p2,transparent,color1,col
         ResetScriptGfxAlign()
         end 
     else 
-            y = safezone/2
+        y = safezone/2
     end 
+    
     local safezone =  safezone - width
     if x > safezone then x = safezone-width/2 end 
     if y > safezone then y = safezone-height/2 end 
     if x < 1-safezone then x = 1-safezone+width/2 end 
     if y < 1-safezone then y = 1-safezone+height/2 end 
+    local sp2 = tostring(p1..p2)
+    if not nowY[sp2] then nowY[sp2] = 0 end 
+    if sp2 == "T" then 
+        if nowY[sp2] then 
+            y = y + (nowY[sp2] * (height+ 0.005)*2.0) 
+        end  
+    else 
+        if nowY[sp2] then 
+            y = y - (nowY[sp2] * (height+ 0.005)*2.0) 
+        end 
+    end 
+    nowY[sp2] = nowY[sp2] + 1
+    
     local a = transparent and math.floor(255*transparent) or 255
     CreateThread(function()
         repeat Wait(0) 
