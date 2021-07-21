@@ -3,14 +3,24 @@
 Install:
 
 #method1:
+resources.cfg
+```
 client_script "@nprogressbar_native/progressbar.lua"
+```
+then Call
+```
 CreateProgress(...)
+```
 
 #method2:
+```
 exports.nprogressbar_native:CreateProgress(...)
+```
 
 #method3:
+```
 TriggerEvent('CreateProgress',...)
+```
 
 
 functions:
