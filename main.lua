@@ -30,16 +30,18 @@ local function GetTextWidth(text)
     return width 
 end 
 local function DrawProgress(xper,text,size,width,height,fontid,x,y,colorValue,colorTrough,colorText)
-    DrawRect(
-        x  --[[ number ]], 
-        y   --[[ number ]], 
-        0.105 + width --[[ number ]] , 
-        height * 2.0 --[[ number ]], 
-        colorTrough[1] --[[ integer ]], 
-        colorTrough[2] --[[ integer ]], 
-        colorTrough[3] --[[ integer ]], 
-        colorTrough[4] --[[ integer ]]
-    )
+    if colorTrough and colorTrough[4] > 0 then 
+        DrawRect(
+            x  --[[ number ]], 
+            y   --[[ number ]], 
+            0.105 + width --[[ number ]] , 
+            height * 2.0 --[[ number ]], 
+            colorTrough[1] --[[ integer ]], 
+            colorTrough[2] --[[ integer ]], 
+            colorTrough[3] --[[ integer ]], 
+            colorTrough[4] --[[ integer ]]
+        )
+    end 
     DrawRect(
         x  + (((0.1+ width) * xper)/2) - (0.1+ width)/2    --[[ number ]], 
         y  --[[ number ]], 
@@ -50,7 +52,9 @@ local function DrawProgress(xper,text,size,width,height,fontid,x,y,colorValue,co
         colorValue[3] --[[ integer ]], 
         colorValue[4] --[[ integer ]]
     )
-    DrawText2D(text,size,x ,y-((height * 1.5)/2)+0.00138888,fontid,colorText)
+    if colorText and colorText[4] > 0 and string.len(text) > 0 then 
+        DrawText2D(text,size,x ,y-((height * 1.5)/2)+0.00138888,fontid,colorText)
+    end 
 end 
 local function CreateProgress(duration,text,cb,font,p1,p2,transparent,color1,color2,color3)
     local nowTime = GetGameTimer()
