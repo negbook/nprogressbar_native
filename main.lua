@@ -128,6 +128,9 @@ local function CreateProgress(duration,text,cb,font,p1,p2,transparent,color1,col
             DrawProgress(percent,text,size,width,height,fontid,x,y,{colorValue[1],colorValue[2],colorValue[3],a},{colorTrough[1],colorTrough[2],colorTrough[3],a},{colorText[1],colorText[2],colorText[3],colorText[4] or 255})
         until ggt >= endTime 
         if cb then cb(text) end 
+        if nowY[sp2] then 
+            nowY[sp2] = nowY[sp2] - 1
+        end 
         return 
     end)
 end 
